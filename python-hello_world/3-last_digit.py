@@ -12,4 +12,4 @@ else:
     result = "and is less than 6 and not 0"
 
 # Print the result
-print("The Last digit of {} is {}, {}".format(number, last_digit, result))
+print("Last digit of {} is {}, {}".format(number, last_digit, result))
