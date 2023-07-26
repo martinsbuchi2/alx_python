@@ -7,11 +7,11 @@ last_digit = number % 10
 
 # Determine the output message based on the last digit
 if last_digit > 5:
-    message = "and is greater than 5"
+    result = "and is greater than 5"
 elif last_digit == 0:
-    message = "and is 0"
+    result = "and is 0"
 else:
-    message = "and is less than 6 and not 0"
+    result = "and is less than 6 and not 0"
 
 # Print the result
-print(f"Last digit of {number} is {last_digit} {message}")
+print(f"Last digit of {number} is {last_digit} {result}")
