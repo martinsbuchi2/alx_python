@@ -1,3 +1,4 @@
-for tens_digit in range(1, 9):
-    for ones_digit in range(tens_digit + 1, 10):
-        print("{:d}{:d}".format(tens_digit, ones_digit), end=", " if tens_digit < 8 else "\n")
+for num in range(10):
+    for next_num in range(num + 1, 10):
+        if num != next_num:
+            print("{:d}{:d}".format(num, next_num), end=", " if num < 8 else "\n")
