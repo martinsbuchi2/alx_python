@@ -3,7 +3,7 @@ import random
 number = random.randint(-10000, 10000)
 
 # Get the last digit of the number
-last_digit = abs(number) % 10
+last_digit = number % 10 if number >= 0 else -(-number % 10)
 
 # Determine the output message based on the last digit
 if last_digit > 5:
