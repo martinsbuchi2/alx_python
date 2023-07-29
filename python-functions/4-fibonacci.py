@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def fibonacci_sequence(n):
     if n == 0:
         return []
