@@ -4,6 +4,8 @@ b =2
 
 from add_0 import add
 
-my_value = add(a,b)
+result = add(a, b)
+output_string = f"{a} + {b} = {result}"
 
-print(f"{a} + {b} = {my_value}")
+if __name__ == "__main__":
+    print(output_string)
