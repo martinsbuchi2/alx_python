@@ -1,3 +1,5 @@
 import add_0
 add = add_0.add
-print(add(1, 2))
+a =1
+b =2
+print("{} + {} = {}".format(a,b,add(1,2)) )
