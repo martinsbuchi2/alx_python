@@ -9,6 +9,4 @@ result = add(a, b)
 if __name__ == "__main__":
     pass
     
-print(f"{a} + {b} = {result}")
-    
-    
+print("{} + {} = {} " .format(a, b, result))
