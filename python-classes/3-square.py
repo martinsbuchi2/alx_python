@@ -7,7 +7,7 @@ class Square:
     """instance attribute, then access and update private attribute"""
     
     def __init__(self, size):
-        self.size = size
+        self.__size = size
         
     @property
     def size(self):
