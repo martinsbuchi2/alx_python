@@ -14,7 +14,6 @@ class Square:
         else:
             self.__size = size
             
-    """public instance attribute"""
-    
+   
     def area(self):
         return self.__size * self.__size
