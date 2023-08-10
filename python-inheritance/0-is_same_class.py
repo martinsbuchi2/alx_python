@@ -3,6 +3,6 @@
 class  isClass:
     pass
     
-""" My base class """
 def is_same_class(obj, a_class):
+    """ My base class """
     return type(obj) is a_class
