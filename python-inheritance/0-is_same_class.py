@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" My base class """
 class  isClass:
     pass
     """ My base class """
