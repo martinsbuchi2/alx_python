@@ -75,3 +75,9 @@ class Rectangle(Base):
         """Displays the Rectangle instance using '#' characters"""
         for _ in range(self.__height):
             print('#' * self.__width)
+            
+    def __str__(self):
+        """String representation of the Rectangle instance"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
+        
