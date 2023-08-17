@@ -71,4 +71,7 @@ class Rectangle(Base):
         """Returns the rectangle's width multiplied by its height."""
         return self.__height * self.__width
     
-    
+    def display(self):
+        """Displays the Rectangle instance using '#' characters"""
+        for _ in range(self.__height):
+            print('#' * self.__width)
