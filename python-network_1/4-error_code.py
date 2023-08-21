@@ -3,7 +3,7 @@ import requests
 import sys
 
 def main():
-    url = url = sys.argv[1]
+    url = sys.argv[1]
     
     res = requests.post(url)
     if res.status_code >= 400:
