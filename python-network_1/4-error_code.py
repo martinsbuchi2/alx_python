@@ -8,8 +8,7 @@ def main():
     res = requests.post(url)
     if res.status_code >= 400:
         print('Error code: {}'.format(res.status_code))
-    else:
-        print(res.text)    
+     
     
 
 if __name__ == '__main__':
