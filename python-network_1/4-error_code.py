@@ -3,13 +3,14 @@ import requests
 import sys
 
 def main():
-    url = sys.argv[1]
-    response = requests.get(url)
+    url = url = sys.argv[1]
     
-    if response.status_code >= 400:
-        print(f"Error code: {response.status_code}")
+    res = requests.post(url)
+    if res.status_code >= 400:
+        print("Error code: {}".format(res.status_code))
     else:
-        print(response.text)
+        print(res.text)    
+    
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
