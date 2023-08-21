@@ -2,22 +2,22 @@
 import requests
 import sys
 
+import requests
+import sys
+
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python 1-hbtn_header.py <URL>")
-        return
+        print("Usage: python script_name.py <URL>")
+        sys.exit(1)
 
     url = sys.argv[1]
     response = requests.get(url)
-
-    if response.status_code == 200:
-        x_request_id = response.headers.get('X-Request-Id')
-        if x_request_id:
-            print(x_request_id)
-        else:
-            print("X-Request-Id not found in the response header.")
+    
+    if 'X-Request-Id' in response.headers:
+        x_request_id = response.headers['X-Request-Id']
+        print(x_request_id)
     else:
-        print(f"Request to {url} failed with status code: {response.status_code}")
+        print("X-Request-Id not found in response header.")
 
 if __name__ == "__main__":
     main()
