@@ -3,8 +3,9 @@ import requests
 import sys
 
 def main():
-    url = 'url'
-    email = 'email'
+    
+    url = sys.argv[1]
+    email = sys.argv[2]
 
     payload = {'email': email}
     response = requests.post(url, data=payload)
