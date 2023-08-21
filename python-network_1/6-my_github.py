@@ -3,14 +3,14 @@ import requests
 import sys
 
 def main():
-    url = 'https://intranet.alxswe.com/rltoken/JCpFttOsrM4O0YrdMr1s0w'
     username = sys.argv[1]
     password = sys.argv[2]
-    
-    res = requests.get(url, auth=(username, password))
-    
-    if res.status_code == 200:
-        user_data = res.json()
+
+    url = "https://api.github.com/user"
+    response = requests.get(url, auth=(username, password))
+
+    if response.status_code == 200:
+        user_data = response.json()
         print(user_data['id'])
     else:
         print("None")
