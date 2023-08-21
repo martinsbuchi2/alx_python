@@ -3,6 +3,10 @@ import requests
 import sys
 
 def main():
+    if len(sys.argv) != 2:
+        print("Usage: python script_name.py <URL>")
+        sys.exit(1)
+
     url = sys.argv[1]
     response = requests.get(url)
     
@@ -10,7 +14,7 @@ def main():
         x_request_id = response.headers['X-Request-Id']
         print(x_request_id)
     else:
-        print("[Got]\nX-Request-Id not found in response header.\n(43 chars long)")
+        print("X-Request-Id not found in response header.")
 
 if __name__ == "__main__":
     main()
