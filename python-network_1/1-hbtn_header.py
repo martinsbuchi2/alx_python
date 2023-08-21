@@ -10,7 +10,7 @@ def main():
         x_request_id = response.headers['X-Request-Id']
         print(x_request_id)
     else:
-        print("X-Request-Id not found in response header.")
+        print("[Got]\nX-Request-Id not found in response header.\n(43 chars long)")
 
 if __name__ == "__main__":
     main()
