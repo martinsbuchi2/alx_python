@@ -3,10 +3,6 @@ import requests
 import sys
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: python script_name.py <URL> <email>")
-        sys.exit(1)
-
     url = sys.argv[1]
     email = sys.argv[2]
 
