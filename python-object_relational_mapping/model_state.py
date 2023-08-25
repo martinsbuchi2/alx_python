@@ -13,7 +13,6 @@ class State(Base):
     id = Column('id', Integer, primary_key=True, nullable=False, autoincrement=True)
     name =  Column('name', String(128), nullable=False)
 
-
 if __name__ == "__main__":
     """ to be imported before calling """
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
