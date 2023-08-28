@@ -1,5 +1,7 @@
+#!/usr/bin/python
 """
-the previous task to a new script that starts a Flask web application
+the previous task to a new script that 
+starts a Flask web application
 """
 
 from flask import Flask
@@ -29,4 +31,5 @@ def c_text(text):
 
 
 if __name__ == "__main__":
+    """run the flask app"""
     app.run(host='0.0.0.0', port=5000)   # host is 'localhost'
