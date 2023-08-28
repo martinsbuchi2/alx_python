@@ -1,22 +1,22 @@
 #!/usr/bin/python
 """
 the previous task to a new script that starts a Flask web application:
-/number/<n>: display “n is a number” only if n is an integer
+/number_template/<n>: display a HTML page only if n is an integer:
+H1 tag: “Number: n” inside the tag BODY
 """
 
 from flask import Flask, render_template
 
-
 app = Flask(__name__)
 
 
-@app.route("/", strict_slashes=False)  # route to the root of our site, "/"
-def hello():
+@app.route('/', strict_slashes=False)
+def hello_hbnb():
     return "Hello HBNB!"
 
 
-@app.route("/hbnb", strict_slashes=False)  # route to the root of our site, "/"
-def hello_hbnb():
+@app.route('/hbnb', strict_slashes=False)
+def hbnb():
     return "HBNB"
 
 
@@ -41,5 +41,5 @@ def number_template(n):
     return render_template('5-number.html', number=n)
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)   # host is 'localhost'
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
