@@ -1,4 +1,3 @@
-#!/usr/bin/python
 """
 the previous task to a new script that starts a Flask web application
 """
