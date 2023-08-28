@@ -23,7 +23,7 @@ def hello_hbnb():
 def c_text(text):
     return "C " + text.replace('_', ' ')
 
-
+""" doc"""
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def c_text(text):
