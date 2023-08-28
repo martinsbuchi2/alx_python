@@ -29,7 +29,6 @@ def c_text(text):
 def c_text(text):
     return  "Python " + text.replace('_', ' ')
 
-
 if __name__ == "__main__":
     """run the flask app"""
     app.run(host='0.0.0.0', port=5000)   # host is 'localhost'
