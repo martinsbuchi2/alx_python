@@ -1,30 +1,38 @@
-# '''Write a Python script that, using this REST API, for a given employee ID, returns information about his/her TODO list progress.'''
-
+'''Write a Python script that, using this REST API, for a given employee ID, returns information about his/her TODO list progress.'''
 import requests
 import sys
 
-def get_employee_todo_progress(employee_id):
-    # Fetch employee data
-    employee_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
+def fetch_employee_data(employee_id):
+    base_url = "https://jsonplaceholder.typicode.com"
+    employee_url = f"{base_url}/users/{employee_id}"
+    todos_url = f"{base_url}/users/{employee_id}/todos"
+
+    employee_response = requests.get(employee_url)
+    todos_response = requests.get(todos_url)
+
+    if employee_response.status_code != 200 or todos_response.status_code != 200:
+        print("Error: Unable to fetch data from the API.")
+        sys.exit(1)
+
     employee_data = employee_response.json()
+    todos_data = todos_response.json()
+    return employee_data, todos_data
 
-    # Fetch TODO list for the employee
-    todo_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
-    todo_data = todo_response.json()
+def display_todo_progress(employee_name, todos_data):
+    total_tasks = len(todos_data)
+    completed_tasks = sum(1 for todo in todos_data if todo['completed'])
 
-    # Calculate completed tasks and total tasks
-    completed_tasks = [task for task in todo_data if task["completed"]]
-    number_of_done_tasks = len(completed_tasks)
-    total_number_of_tasks = len(todo_data)
-
-    # Print employee TODO list progress
-    print(f"Employee {employee_data['name']} is done with tasks ({number_of_done_tasks}/{total_number_of_tasks}):")
-    for task in completed_tasks:
-        print(f"\t{task['title']}")
+    print(f"Employee {employee_name} is done with tasks({completed_tasks}/{total_tasks}):")
+    for todo in todos_data:
+        if todo['completed']:
+            print(f"    {todo['title']}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 2 or not sys.argv[1].isdigit():
         print("Usage: python script_name.py <employee_id>")
-    else:
-        employee_id = int(sys.argv[1])
-        get_employee_todo_progress(employee_id)
+        sys.exit(1)
+
+    employee_id = int(sys.argv[1])
+    employee_data, todos_data = fetch_employee_data(employee_id)
+    employee_name = employee_data.get('name', 'Unknown Employee')
+    display_todo_progress(employee_name, todos_data)
