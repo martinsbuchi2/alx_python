@@ -1,5 +1,6 @@
-import requests
+'''Using what you did in the task #0, extend your Python script to export data in the CSV format.'''
 import csv
+import requests
 import sys
 
 def fetch_employee_data(employee_id):
