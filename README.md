@@ -2,7 +2,7 @@
 
 1. Start with your very first Python script
 2. This repository provides you with all you need to know to get started with Python programming
-   <br /> 
+   <br />  <br />
 """
 It can only get better!
 """
